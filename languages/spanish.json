@@ -1,0 +1,19 @@
+{
+    "translation": {
+        "Language": "es-ES",
+        "LanguageWord": "Lenguaje",
+        "Spanish": "Español",
+        "English": "English",
+        "Home": "Inicio",
+        "HomeBtn": "Inicio",
+        "MovieBtn": "Peliculas",
+        "SerieBtn": "Series",
+        "AnimeBtn": "Anime",
+        "SettingsBtn": "Ajustes",
+        "topRated": "Mejor Valorados",
+        "Movie": "Peliculas",
+        "Serie": "Series",
+        "ViewMore": "Ver mas >>>",
+        "goBack": "Regresar"
+    }
+}
