@@ -1,11 +1,34 @@
 import { StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
+import { fetchDataBase } from '../db';
+import { getTheme } from '../store/selectors/appConfig.selector';
 import { COLORS } from './colors';
-import { getTheme } from './phoneSettings';
-export const bgColor = () => (getTheme() === 'dark-theme' ? COLORS.darkTheme.background : null);
-export const bgColorSecondary = () => (getTheme() === 'dark-theme' ? '#fff' : null);
-export const textColor = () => (getTheme() === 'dark-theme' ? COLORS.darkTheme.text.primary : null);
-export const textColorSecondary = () =>
-    getTheme() === 'dark-theme' ? COLORS.darkTheme.text.secondary : null;
+
+const hola = () => {
+    const data = fetchDataBase().then((res) => {
+        res.rows._array[0].theme;
+    });
+    return data;
+};
+
+console.log(hola());
+
+export const test = async () => {
+    return 'dark-theme';
+};
+export const bgColor = async () => {
+    return 'dark-theme';
+};
+export const bgColorSecondary = async () => ((await test()) === 'dark-theme' ? '#fff' : null);
+export const textColor = async () => {
+    const a = await test();
+    return 'dark-theme';
+};
+export const textColorSecondary = async () => {
+    return 'dark-theme';
+};
+export const UniversalColor = 'dark-theme';
+
 export const CONSTSTYLES = StyleSheet.create({
     mainContainer: {
         flex: 1,

@@ -1,20 +1,28 @@
 import { useTranslation } from 'react-i18next';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 import { useSelector } from 'react-redux';
-import { CustomStatusBar } from '../../../constants/statusBarCustom';
-import { getSelectedMovie } from '../../../store/selectors';
+import { CustomStatusBar } from '../../constants/statusBarCustom';
+import { getSelectedMovie } from '../../store/selectors';
 import { styles } from './styles';
 import StarRating from 'react-native-star-rating-widget';
-import { CONSTSTYLES } from '../../../constants/globalStyles';
-import { GenresContainer } from '../../../components';
-const MovieSelected = ({ navigation }) => {
+import { CONSTSTYLES } from '../../constants/globalStyles';
+import { GenresContainer } from '../../components';
+const CardSelected = ({ route, navigation }) => {
     const [t, i18n] = useTranslation();
     const data = useSelector(getSelectedMovie);
     return data === undefined ? null : (
         <CustomStatusBar>
-            <TouchableHighlight style={styles.goBackContainer} onPress={() => navigation.goBack()}>
-                <View>
-                    <Image source={require('../../../../assets/arrow.png')} />
+            <TouchableHighlight
+                style={styles.goBackContainer}
+                onPress={() => {
+                    console.log(navigation.getState());
+                    navigation.goBack();
+                }}>
+                <View style={styles.goBackContainer}>
+                    <Image
+                        source={require('../../../assets/arrow.png')}
+                        style={styles.goBackImage}
+                    />
                     <Text>{t('goBack')}</Text>
                 </View>
             </TouchableHighlight>
@@ -43,4 +51,4 @@ const MovieSelected = ({ navigation }) => {
         </CustomStatusBar>
     );
 };
-export default MovieSelected;
+export default CardSelected;

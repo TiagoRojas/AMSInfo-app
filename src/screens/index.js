@@ -3,4 +3,4 @@ export { default as Anime } from './anime';
 export * from './settings';
 export { default as Movies } from './movies';
 export { default as Search } from './search';
-export { default as MovieSelected } from './movies/movieSelected';
+export { default as CardSelected } from './cardSelected';

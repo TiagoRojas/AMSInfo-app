@@ -42,7 +42,7 @@ export const replaceData = ({ language, theme }) => {
     return promise;
 };
 
-export const fetchDataBase = () => {
+export const fetchDataBase = async () => {
     const promise = new Promise((res, rej) => {
         db.transaction((tx) => {
             tx.executeSql(
@@ -53,5 +53,6 @@ export const fetchDataBase = () => {
             );
         });
     });
-    return promise;
+    const data = await promise.then((res) => res.rows._array[0]);
+    return data;
 };

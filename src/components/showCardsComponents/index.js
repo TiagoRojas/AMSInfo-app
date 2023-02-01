@@ -19,7 +19,9 @@ const ShowCardsComponent = ({ navigation, data, type }) => {
                         language: t('Language'),
                         type: type,
                     });
-                    navigation.navigate('MovieSelected');
+                    navigation.navigate({
+                        name: 'CardSelected',
+                    });
                 }}>
                 <View>
                     <Image

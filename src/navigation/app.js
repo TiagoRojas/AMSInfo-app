@@ -1,15 +1,16 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Home, Anime, SettingsMain, Movies, MovieSelected } from '../screens';
+import { Home, Anime, SettingsMain, Movies, CardSelected } from '../screens';
 import { useTranslation } from 'react-i18next';
 import { CustomDrawer } from '../components';
-import { textColor, textColorSecondary } from '../constants/globalStyles';
-import Complements from './complements';
+import { textColorSecondary } from '../constants/globalStyles';
 import { COLORS } from '../constants/colors';
 const Drawer = createDrawerNavigator();
+
 const AppNavigator = () => {
     const [t, i18n] = useTranslation();
     return (
         <Drawer.Navigator
+            backBehavior="history"
             screenOptions={{
                 keyboardDismissMode: 'on-drag',
                 drawerActiveTintColor: COLORS.darkTheme.active,
@@ -36,20 +37,15 @@ const AppNavigator = () => {
                 options={{ drawerLabel: t('MovieBtn') }}
             />
             <Drawer.Screen
-                name="MovieSelected"
-                component={MovieSelected}
-                options={{ drawerItemStyle: { display: 'none' } }}
-            />
-            <Drawer.Screen
                 name="Settings"
                 component={SettingsMain}
                 options={{ drawerItemStyle: { display: 'none' } }}
             />
-            {/* <Drawer.Screen
-                name="Complements"
-                component={Complements}
+            <Drawer.Screen
+                name="CardSelected"
+                component={CardSelected}
                 options={{ drawerItemStyle: { display: 'none' } }}
-            /> */}
+            />
         </Drawer.Navigator>
     );
 };

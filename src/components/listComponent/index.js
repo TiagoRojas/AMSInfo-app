@@ -26,7 +26,7 @@ const ListComponent = ({ navigation, data }) => {
                         language: t('Language'),
                         type: 'movie',
                     });
-                    navigation.navigate('MovieSelected');
+                    navigation.navigate('CardSelected');
                 }}>
                 <View style={styles.movieContainer}>
                     <Image

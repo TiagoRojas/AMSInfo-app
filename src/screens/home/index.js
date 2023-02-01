@@ -47,6 +47,7 @@ const Home = ({ navigation }) => {
                         navigation={navigation}
                         data={dataTopRatedMovies}
                         type="movie"
+                        screen="Movies"
                     />
                 </View>
                 <View style={styles.SectionContainer}>
@@ -67,6 +68,7 @@ const Home = ({ navigation }) => {
                         navigation={navigation}
                         data={dataTopRatedSeries}
                         type="tv"
+                        screen="Anime"
                     />
                 </View>
             </ScrollView>

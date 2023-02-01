@@ -1,6 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { bgColorSecondary, textColor } from '../../../constants/globalStyles';
+import { bgColor, bgColorSecondary, textColor, UniversalColor } from '../../constants/globalStyles';
 export const styles = StyleSheet.create({
+    goBackImage: {
+        width: 75,
+        height: 75,
+        transform: [{ rotate: '90deg' }],
+        tintColor: UniversalColor,
+    },
+    goBackContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     movieContainer: {
         paddingHorizontal: 20,
         paddingVertical: 10,
